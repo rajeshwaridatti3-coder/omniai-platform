@@ -1,0 +1,2 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',index:true},task:{type:mongoose.Schema.Types.ObjectId,ref:'Task'},kind:{type:String,enum:['video','image','document','audio','other'],default:'other'},url:String,storageKey:String,mimeType:String,size:Number,metadata:mongoose.Schema.Types.Mixed},{timestamps:true}); export default mongoose.model('Asset',schema);

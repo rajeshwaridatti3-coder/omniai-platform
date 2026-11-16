@@ -1,0 +1,2 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',index:true},provider:String,recipient:String,body:String,templateName:String,status:{type:String,default:'queued'},providerMessageId:String,scheduledAt:Date,sentAt:Date,deliveryUpdatedAt:Date,error:String,task:{type:mongoose.Schema.Types.ObjectId,ref:'Task'}},{timestamps:true}); export default mongoose.model('Message',schema);

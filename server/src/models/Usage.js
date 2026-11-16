@@ -1,0 +1,2 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true,index:true},period:{type:String,required:true},videos:{type:Number,default:0},posts:{type:Number,default:0},messages:{type:Number,default:0},aiTokens:{type:Number,default:0}},{timestamps:true});schema.index({user:1,period:1},{unique:true});export default mongoose.model('Usage',schema);
